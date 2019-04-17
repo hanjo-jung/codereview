@@ -1,17 +1,18 @@
+#include "priority_queue.h"
+
 #include <iostream>
 #include <cstdlib>
-#include "priority_queue.h"
+
 
 using namespace std;
 
-template <typename T>
-void pushQueue(templatePriorityQueue<T>* Que, int data){
+
+void pushIntQueue(templatePriorityQueue<int>* Que, int data){
 	cout << "[+] Integer "<< data <<" pushed in the Priority Queue." << endl;
 	Que->push(data);
 }
 
-template<typename T>
-void popQueue(templatePriorityQueue<T>* Que){
+void popIntQueue(templatePriorityQueue<int>* Que){
 	cout << "[+] Integer "<< Que->top() << " will be poped from the Priority Queue." << endl;
 	Que->pop();
 }
@@ -26,21 +27,21 @@ int main(int argc, char* argv[]){
 	}
 
 	// push
-	pushQueue(&priQueue,23);
-	pushQueue(&priQueue,598);
-	pushQueue(&priQueue,302);
+	pushIntQueue(&priQueue,23);
+	pushIntQueue(&priQueue,598);
+	pushIntQueue(&priQueue,302);
 
 	if( argc > 1 ){
 		customNumber = atoi(argv[1]);
 		if( customNumber > -500 && customNumber < 2000 ){
-			pushQueue(&priQueue,customNumber);
+			pushIntQueue(&priQueue,customNumber);
 		}
 		else{
-			pushQueue(&priQueue,-1);
+			pushIntQueue(&priQueue,-1);
 		}
 	}
 	else{
-		pushQueue(&priQueue,-1);
+		pushIntQueue(&priQueue,-1);
 	}
 
 	//empty & size
@@ -53,8 +54,8 @@ int main(int argc, char* argv[]){
 	}
 
 	// pop twice
-	popQueue(&priQueue);
-	popQueue(&priQueue);
+	popIntQueue(&priQueue);
+	popIntQueue(&priQueue);
 
 	cout << "[+] Now, Top element of Priority Queue is " << priQueue.top() << endl;
 	
