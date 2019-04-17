@@ -1,7 +1,5 @@
 #include "priority_queue.h"
 
-namespace myIntPriorityQueue {
-        
 template <>
 templatePriorityQueue<int>::templatePriorityQueue() {
 }
@@ -35,4 +33,3 @@ void templatePriorityQueue<int>::push(const int& val) {
         storage.push(val);
 }
 
-}
